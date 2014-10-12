@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userInfo" class="asn.jpa_test.entity.UserInfo"
+		p:fullName="Abhishek"
+		p:userName="abhishek"		
+		p:userAddDetail-ref="userAddDetail"
+		p:userAuth-ref="userAuth"/>
+	
+	<bean id="userAuth" class="asn.jpa_test.entity.UserAuth"
+		p:passVal="pwd"
+		p:userInfo_FK-ref="userInfo"/>
+		
+	<bean id="userAddDetail" class="asn.jpa_test.entity.UserAddDetail"
+		p:address="pune"
+		p:userInfo_FK-ref="userInfo"/>
+</beans>
