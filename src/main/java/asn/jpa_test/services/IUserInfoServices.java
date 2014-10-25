@@ -21,4 +21,6 @@ public interface IUserInfoServices {
 	UserAuth findUserAuthByUserInfoId(Long id);
 	UserAddDetail findUserAddDetailByUserInfoId(Long id);
 	List<UserInfo> findAll();
+	void delete(Long userId);
+	void update(UserInfo userInfo);
 }

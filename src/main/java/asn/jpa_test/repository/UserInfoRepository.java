@@ -17,12 +17,12 @@ import asn.jpa_test.entity.UserInfo;
  */
 public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
 
-	@Query(value="SELECT DISTINCT u from UserInfo u WHERE u.userName=:userName")
+	@Query(value="SELECT DISTINCT u FROM UserInfo u WHERE u.userName=:userName")
 	UserInfo findByUserName(@Param("userName")String userName);
 	
-	@Query(value="SELECT ua FROM UserAuth ua WHERE ua.userInfo_FK.id = :id")
+	@Query(value="SELECT u.userAuth FROM UserInfo u WHERE u.id = :id")
 	UserAuth findUserAuthByUserInfoId(@Param("id")Long id);
 
-	@Query(value="SELECT ua FROM UserAddDetail ua WHERE ua.userInfo_FK.id = :id")
+	@Query(value="SELECT u.userAddDetail FROM UserInfo u WHERE u.id = :id")
 	UserAddDetail findUserAddDetailByUserInfoId(Long id);
 }

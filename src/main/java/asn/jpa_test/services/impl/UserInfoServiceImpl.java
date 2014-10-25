@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import asn.jpa_test.entity.UserAddDetail;
 import asn.jpa_test.entity.UserAuth;
@@ -49,6 +50,21 @@ public class UserInfoServiceImpl implements IUserInfoServices {
 	@Override
 	public UserAddDetail findUserAddDetailByUserInfoId(Long id) {
 		return userInfoRepository.findUserAddDetailByUserInfoId(id);
+	}
+
+	@Override
+	public void delete(Long userId) {
+		userInfoRepository.delete(userId);
+	}
+
+	@Transactional
+	@Override
+	public void update(UserInfo userInfo) {
+		UserInfo updatedUserInfo = userInfoRepository.findOne(userInfo.getId());
+		updatedUserInfo.setFullName(userInfo.getFullName());
+		updatedUserInfo.updateUserAddDetail(userInfo.getUserAddDetail());
+		updatedUserInfo.updateUserAuth(userInfo.getUserAuth());
+		updatedUserInfo.setUserName(userInfo.getUserName());
 	}
 
 }

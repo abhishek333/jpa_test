@@ -5,6 +5,7 @@ package asn.jpa_test.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
@@ -17,10 +18,12 @@ public class UserInfo extends BaseEntity {
 	private String fullName;
 	private String userName;
 	
-	@OneToOne(optional=false, mappedBy="userInfo_FK", cascade=CascadeType.ALL)
+	@OneToOne(optional=false, cascade=CascadeType.ALL)
+	@JoinColumn(name="userAuth_FK")
 	private UserAuth userAuth;
 	
-	@OneToOne(optional=false, mappedBy="userInfo_FK", cascade=CascadeType.ALL)
+	@OneToOne(optional=false, cascade=CascadeType.ALL)
+	@JoinColumn(name="userAddDetail_FK")
 	private UserAddDetail userAddDetail;
 	
 	public UserInfo(){}
@@ -63,6 +66,14 @@ public class UserInfo extends BaseEntity {
 		return "UserInfo [fullName=" + fullName + ", userName=" + userName
 				+ ", userAuth=" + getUserAuth() + ", userAddDetails="
 				+ getUserAddDetail() + "]";
+	}
+	public void updateUserAddDetail(UserAddDetail userAddDetail2) {
+		UserAddDetail uAddDetail = getUserAddDetail();
+		uAddDetail.setAddress(userAddDetail2.getAddress());
+	}
+	public void updateUserAuth(UserAuth userAuth2) {
+		UserAuth userAuth = getUserAuth();
+		userAuth.setPassVal(userAuth2.getPassVal());
 	}
 	
 }

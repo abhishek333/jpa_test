@@ -14,11 +14,7 @@ import javax.persistence.OneToOne;
 public class UserAuth extends BaseEntity {
 
 	private String passVal;
-	
-	@OneToOne
-	//@MapsId
-	private UserInfo userInfo_FK;
-	
+		
 	public UserAuth(){}
 	public UserAuth(String passVal) {
 		super();
@@ -32,12 +28,5 @@ public class UserAuth extends BaseEntity {
 	public void setPassVal(String passVal) {
 		this.passVal = passVal;
 	}
-	public UserInfo getUserInfo_FK() {
-		return userInfo_FK;
-	}
-	public void setUserInfo_FK(UserInfo userInfo_FK) {
-		this.userInfo_FK = userInfo_FK;
-	}
-	
-	
+
 }
