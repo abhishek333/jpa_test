@@ -61,12 +61,6 @@ public class UserInfo extends BaseEntity {
 		this.userAddDetail = userAddDetail;
 	}
 	
-	@Override
-	public String toString() {
-		return "UserInfo [fullName=" + fullName + ", userName=" + userName
-				+ ", userAuth=" + getUserAuth() + ", userAddDetails="
-				+ getUserAddDetail() + "]";
-	}
 	public void updateUserAddDetail(UserAddDetail userAddDetail2) {
 		UserAddDetail uAddDetail = getUserAddDetail();
 		uAddDetail.setAddress(userAddDetail2.getAddress());
@@ -76,4 +70,21 @@ public class UserInfo extends BaseEntity {
 		userAuth.setPassVal(userAuth2.getPassVal());
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("UserInfo [id=");
+		builder.append(getId());
+		builder.append(", fullName=");
+		builder.append(fullName);
+		builder.append(", userName=");
+		builder.append(userName);
+		builder.append(", userAuth=");
+		builder.append(userAuth);
+		builder.append(", userAddDetail=");
+		builder.append(userAddDetail);
+		builder.append("]");
+		return builder.toString();
+	}
+		
 }

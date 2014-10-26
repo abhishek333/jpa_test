@@ -28,5 +28,13 @@ public class UserAuth extends BaseEntity {
 	public void setPassVal(String passVal) {
 		this.passVal = passVal;
 	}
-
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("UserAuth [passVal=");
+		builder.append(passVal);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }
