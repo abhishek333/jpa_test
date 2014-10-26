@@ -29,4 +29,13 @@ public class UserAddDetail extends BaseEntity {
 		this.address = address;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("UserAddDetail [address=");
+		builder.append(address);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }
