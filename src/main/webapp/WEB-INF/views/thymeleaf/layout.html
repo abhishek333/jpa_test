@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerFragment">
+	 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" />	
+</head>
+<body>
+	<div class="container" style="padding-top: 50px;">
+			<div th:fragment="menuFragment">
+				<div class="header well">
+					<img th:src="@{/assets/images/springsource_banner.png}"/>
+				</div>
+				<div class="page-header">
+					<h1 th:text="${title}"></h1>
+				</div>	
+				<ul>
+					<li><a th:href="@{/jsp-home.htm}">No template</a></li>										
+					<li><a th:href="@{/home.htm}">Home</a></li>
+				</ul>
+			</div>
+			<div th:fragment="scriptFragment">
+				<script src="#" th:src="@{/assets/js/jquery-1.9.1.js}"></script>
+				<script src="#" th:src="@{/assets/js/bootstrap.min.js}"></script>
+				<script src="#" th:src="@{/assets/js/app.js}"></script>
+			</div>
+		</div>
+</body>
+</html>

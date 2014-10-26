@@ -17,10 +17,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import asn.jpa_test.entity.UserAddDetail;
-import asn.jpa_test.entity.UserAuth;
-import asn.jpa_test.entity.UserInfo;
-import asn.jpa_test.services.IUserInfoServices;
+import asn.jpa_test.core.entity.UserAddDetail;
+import asn.jpa_test.core.entity.UserAuth;
+import asn.jpa_test.core.entity.UserInfo;
+import asn.jpa_test.core.services.IUserInfoServices;
 
 /**
  * @author Abhishek
