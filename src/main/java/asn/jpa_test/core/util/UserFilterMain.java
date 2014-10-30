@@ -46,7 +46,7 @@ public class UserFilterMain {
 					}
 
 				});
-		System.out.println("removeUsers: " + removeUsers);
+		//System.out.println("removeUsers: " + removeUsers);
 	}
 
 	public static <T> Collection<T> filter(Collection<T> source,
