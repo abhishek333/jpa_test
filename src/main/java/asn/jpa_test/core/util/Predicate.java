@@ -3,8 +3,6 @@
  */
 package asn.jpa_test.core.util;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * @author Abhishek

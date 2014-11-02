@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="headerFragment">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/assets/css/bootstrap.min.css}" href="../../../assets/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="container" style="padding-top: 50px;">
-		<div th:fragment="menuFragment">
+            <div th:fragment="menuFragment">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -66,9 +66,9 @@
 			
 		</div>
 		<div th:fragment="scriptFragment">
-			<script src="#" th:src="@{/assets/js/jquery-1.9.1.js}"></script>
-			<script src="#" th:src="@{/assets/js/bootstrap.min.js}"></script>
-			<script src="#" th:src="@{/assets/js/app.js}"></script>
+			<script src="../../../assets/js/jquery-1.9.1.js" th:src="@{/assets/js/jquery-1.9.1.js}"></script>
+			<script src="../../../assets/js/bootstrap.min.js" th:src="@{/assets/js/bootstrap.min.js}"></script>
+			<script src="../../../assets/js/app.js" th:src="@{/assets/js/app.js}"></script>
 		</div>
 	</div>
 </body>

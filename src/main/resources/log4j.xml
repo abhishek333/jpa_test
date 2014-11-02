@@ -1,19 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration status="OFF">
- <appenders>
-  <Console name="Console" target="SYSTEM_OUT">
-   <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
-  </Console>
- </appenders>
- <Loggers>
-  <Logger name="org.springframework" level="debug" additivity="false">
-   <AppenderRef ref="Console" />
-  </Logger>
-  <Logger name="asn.jpa_test" level="debug" additivity="false">
-   <AppenderRef ref="Console" />
-  </Logger>
-  <Root level="error">
-   <AppenderRef ref="Console" />
-  </Root>
- </Loggers>
+<?xml version='1.0' encoding='UTF-8'?>
+<configuration status='TRACE'>
+  <appenders>
+    <Console name='Console' target='SYSTEM_OUT'>
+      <PatternLayout pattern='%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n'/>
+    </Console>
+  </appenders>
+  <loggers>
+    <logger name='asn.jpa_test' level='trace' additivity='false'>
+      <appender-ref ref='Console'/>
+    </logger>
+    <root level='ALL'>
+      <appender-ref ref='Console'/>
+    </root>
+  </loggers>
 </configuration>
